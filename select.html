@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Select dropdown</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-border.css" />
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="demo-1">
+		<div class="container">
+			<!-- Top Navigation -->
+			<section>
+				<select class="cs-select cs-skin-border">
+					<option value="" disabled selected>Depots</option>
+					<option value="email">Depots</option>
+					<option value="twitter">Sites</option>
+					<option value="linkedin">Parts</option>
+				</select>
+				<input type="text" placeholder="Start Searching..." ng-model="query.term" ng-enter="doSearch(query.term)" class="form-control input-lg ng-pristine ng-valid ng-touched">
+			</section>
+		</div><!-- /container -->
+		<div>
+		<div class="search-wrap-home">
+			<div class="input-group">
+				<div class="input-group-btn search-select-group">
+					<select ng-model="data.searchType" ng-options="searchType as searchType.name for searchType in searchType" required="" class="form-control btn btn-default dropdown-toggle ng-pristine ng-untouched ng-valid ng-valid-required">
+						<option value="0" selected="selected" label="Depots">Depots</option>
+						<option value="1" label="Sites">Sites</option>
+						<option value="2" label="Parts">Parts</option>
+					</select>
+					</div>
+					<input type="text" placeholder="Start Searching..." ng-model="query.term" ng-enter="doSearch(query.term)" class="form-control ng-pristine ng-valid ng-touched">
+					<span class="submit-button input-group-addon">
+						<a ng-click="doSearch(query.term)" class="clickable">
+							<i class="fa fa-search"></i>
+						</a>
+					</span>
+				</div>
+			</div>	
+		</div>
+		<script src="js/classie.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx(el);
+				} );
+			})();
+		</script>
+	</body>
+</html>
+
