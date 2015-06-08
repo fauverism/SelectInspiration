@@ -1,3 +1,22 @@
+body {
+	background: #ccc !important;
+}
+div.cs-skin-border {
+	width: 100px !important;
+}
+
+.cs-skin-border > span {
+	display: inline-block !important;
+	font-size: 2rem !important;
+	height: 46px !important;
+	width: 190px !important;
+}
+.input-lg {
+	display: inline-block !important;
+	width: 600px !important;
+}
+
+
 @font-face {
 	font-weight: normal;
 	font-style: normal;
